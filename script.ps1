@@ -27,9 +27,8 @@ Expand-Archive edgedriver_win64.zip
 
 cd edgedriver_win64
 # Add msedgedriver.exe to the PATH
-$edgedriverPath = (Get-Location).Path + "\edgedriver_win64"
+$edgedriverPath = (Get-Location).Path + "\edgedriver_win64\msedgedriver.exe"
 $env:PATH += ";$edgedriverPath"
 
-cd ..
 # Run the Streamlit app
 streamlit run main.py
