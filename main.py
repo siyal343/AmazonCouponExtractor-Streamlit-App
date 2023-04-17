@@ -138,11 +138,10 @@ with st.container():
     st.markdown("----", unsafe_allow_html=True)
     col1, col2, col3 = st.columns((2, 1, 2))
     with col2:
-        start_btn = st.button("Start")
+        start_btn = st.button("STAR", use_container_width=True)
 
     if start_btn:
-        st.session_state.res_data = start_extraction(
-            st.session_state.asin_lst[25:40])
+        st.session_state.res_data = start_extraction(st.session_state.asin_lst[25:40])
 
     st.markdown("----", unsafe_allow_html=True)
 
@@ -150,7 +149,7 @@ with st.container():
 
             
 
-
+st.subheader("Extracted Coupons")
 
 with st.container():
     st.table(st.session_state.res_data)
