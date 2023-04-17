@@ -13,7 +13,9 @@ st.set_page_config(page_title="Amazon Coupon Extractor", layout="wide")
 
 progress_text = "Operation in progress. Please wait."
 
-st.title("Amazon Coupon Extractor")
+left, center, right = st.columns((1, 2, 1))
+with center:
+    st.title("Amazon Coupon Extractor")
 
 # Generic Vars
 ASIN = 'B082DK316V'
@@ -138,16 +140,13 @@ with st.container():
     st.markdown("----", unsafe_allow_html=True)
     col1, col2, col3 = st.columns((2, 1, 2))
     with col2:
-        start_btn = st.button("STAR", use_container_width=True)
+        start_btn = st.button("START", use_container_width=True)
 
     if start_btn:
-        st.session_state.res_data = start_extraction(st.session_state.asin_lst[25:40])
+        st.session_state.res_data = start_extraction(
+            st.session_state.asin_lst[25:40])
 
     st.markdown("----", unsafe_allow_html=True)
-
-
-
-            
 
 st.subheader("Extracted Coupons")
 
